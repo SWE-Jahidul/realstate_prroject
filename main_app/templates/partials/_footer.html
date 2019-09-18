@@ -1,0 +1,73 @@
+<footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mb-5">
+                        {% for t in get_default_details %}
+                        <h3 class="footer-heading mb-4">{{ t.about_homeland}}</h3>
+                        <p>{{ t.about_homeland_details }}</p>
+
+                            {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            <h3 class="footer-heading mb-4">Navigations</h3>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'buy' %}">Buy</a></li>
+                                <li><a href="{% url 'rent' %}">Rent</a></li>
+                                <li><a href="#">Properties</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="{% url 'contract' %}">Contact Us</a></li>
+                                <li><a href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+{% block content %}
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="footer-heading mb-4">Follow Us</h3>
+                    <div>
+                    {% if get_default_details %}
+                    {% for t in get_default_details %}
+                        <a href="{{t.company_fb_link }}" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                        <a href="{{t.company_twitter_link }}" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                        <a href="{{ t.company_instagrame_link }}" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                        <a href="{{ t.company_linkend_link }}" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+               {% endfor %}
+                   {% endif %}
+                    </div>
+                </div>
+{% endblock %}
+
+
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script data-cfasync="false"
+                            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a
+                            href="https://amadersoft.com" target="_blank">amadersoft</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
